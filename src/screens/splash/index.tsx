@@ -14,7 +14,7 @@ export function SplashScreen() {
   return (
     <View style={styles.container}>
       <Text testID="screen-title">Splash Screen</Text>
-      <ActivityIndicator size={"large"} color="blue" />
+      <ActivityIndicator testID="loading" size={"large"} color="blue" />
     </View>
   );
 }
