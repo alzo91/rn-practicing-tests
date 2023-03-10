@@ -23,6 +23,10 @@ const config: Config.InitialOptions = {
   //   `node_modules/(?!${untranspiledModulePatterns.join("|")})`,
   // ],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
+  collectCoverage: true,
+  coverageDirectory: "tests/reports/jest",
+  collectCoverageFrom: ["<rootDir>/src/hooks/**", "<rootDir>/src/screens/**"],
+  coverageReporters: ["text-summary", "html", "lcov", "json"],
 };
 
 export default config;
