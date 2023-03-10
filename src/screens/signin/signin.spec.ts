@@ -1,3 +1,4 @@
-describe("[Screens/SignIn] Testing Sign In Screen", () => {
-  expect(1 + 1).toEqual(2);
+// import {render } from '@testing-library/react-native'
+describe("[SignIn] Testing a sing in Screen", () => {
+  it("sun two number", () => expect(1 + 1).toBe(2));
 });
