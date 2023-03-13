@@ -41,3 +41,5 @@ export default config;
 ###### Result :partying_face:
 
 ![image](https://user-images.githubusercontent.com/19477370/224336610-6308b23f-09a4-4fa6-aa96-01ff50849c91.png)
+
+###### :test_tube: :robot: Running Detox [configs](README-DETOX.md)
