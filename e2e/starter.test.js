@@ -5,9 +5,9 @@ describe("Example", () => {
     await device.launchApp();
   });
 
-  // beforeEach(async () => {
-  //  await device.reloadReactNative();
-  // });
+  beforeEach(async () => {
+    await device.reloadReactNative();
+  });
 
   // it("should have splsh screen", async () => {
   //   await expect(element(by.id("screen-title"))).toBeVisible();
