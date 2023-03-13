@@ -120,6 +120,9 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        
+        testBuildType System.getProperty('testBuildType', 'debug') // Added to detox
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner' // Added to detox
     }
 
     splits {
@@ -148,6 +151,8 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            // added to detox
+            proguardFile "${rootProject.projectDir}/../node_modules/detox/android/detox/proguard-rules-app.pro"
         }
     }
 
@@ -190,6 +195,8 @@ android {
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
+    androidTestImplementation('com.wix:detox:+') // added to detox
+    implementation("androidx.appcompat:appcompat:1.1.0") // added to detox
     implementation("com.facebook.react:react-android")
 
     def isGifEnabled = (findProperty('expo.gif.enabled') ?: "") == "true";
