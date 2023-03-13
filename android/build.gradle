@@ -6,9 +6,13 @@ buildscript {
         minSdkVersion = Integer.parseInt(findProperty('android.minSdkVersion') ?: '21')
         compileSdkVersion = Integer.parseInt(findProperty('android.compileSdkVersion') ?: '33')
         targetSdkVersion = Integer.parseInt(findProperty('android.targetSdkVersion') ?: '33')
+        kotlinVersion = "1.6.10" //Add to Detox
+        springBootVersion = "2.0.4.RELEASE"
+
         if (findProperty('android.kotlinVersion')) {
             kotlinVersion = findProperty('android.kotlinVersion')
         }
+
         frescoVersion = findProperty('expo.frescoVersion') ?: '2.5.0'
 
         // We use NDK 23 which has both M1 support and is the side-by-side NDK version from AGP.
@@ -21,6 +25,7 @@ buildscript {
     dependencies {
         classpath('com.android.tools.build:gradle:7.4.1')
         classpath('com.facebook.react:react-native-gradle-plugin')
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     }
 }
 
@@ -37,6 +42,10 @@ allprojects {
 
         google()
         mavenCentral()
+        maven { // (4)
+            url("$rootDir/../node_modules/detox/Detox-android")
+        }
         maven { url 'https://www.jitpack.io' }
+
     }
 }
