@@ -22,6 +22,7 @@ const config: Config.InitialOptions = {
   // transformIgnorePatterns: [
   //   `node_modules/(?!${untranspiledModulePatterns.join("|")})`,
   // ],
+  testPathIgnorePatterns: ["android/", ".expo/", "e2e/"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   collectCoverage: true,
   coverageDirectory: "tests/reports/jest",
